@@ -4,11 +4,10 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-public class App extends JFrame
-{
 
-	private static final long serialVersionUID = 1L;
-	
+@SuppressWarnings("serial")
+public class App extends JFrame
+{	
 	//Get window parameters
 	Parameters p = new Parameters();
 	
@@ -31,6 +30,9 @@ public class App extends JFrame
 		
 	}
 	
+	/**
+	 * Function that changes game state to show menu
+	 */
 	public void showMenu()
 	{
 		setSize(p.getResolutionX(), p.getResolutionY());
@@ -38,26 +40,41 @@ public class App extends JFrame
 		add(new Menu(p, this));
 	}
 	
+	/**
+	 * Function that changes game state to show menu screen
+	 */
 	public void showGameModeSelect()
 	{
 		add(new GameModeSelect(p, this));
 	}
 	
+	/**
+	 * Function that changes game state to show options screen
+	 */
 	public void showOptions()
 	{
 		add(new Options(p, this));
 	}
 	
+	/**
+	 * Function that changes game state to show credits screen
+	 */
 	public void showCredits()
 	{
 		add(new Credits(p, this));
 	}
 	
+	/**
+	 * Function that changes game state to show main game screen
+	 */
 	public void startGame()
 	{
 		add(new GameBoard(p, this));
 	}
 
+	/**
+	 * Main function that starts the program
+	 */
 	public static void main(String[] args)
 	{	
 		EventQueue.invokeLater(() -> {

@@ -3,11 +3,9 @@ package TicTacToe;
 import java.awt.Color;
 import java.awt.Graphics;
 
+@SuppressWarnings("serial")
 public class Options extends GameState
 {
-	
-	private static final long serialVersionUID = 1L;
-	
 	private int options[] = {0, 0, 1};
 	
 	private String[][] cols = {{"Sound effects:", "Resolution:", "DISCARD"}, {"", "", "APPLY"}};
@@ -15,8 +13,8 @@ public class Options extends GameState
 	private String[] row1 = {"ON", "OFF"};
 	private String[] row2 = {"800x600", "1024x768", "1280x960"};
 	
-	int selection = 1;
-	int optionsCount = cols[0].length;
+	private int selection = 1;
+	private int optionsCount = cols[0].length;
 	
 	private boolean blockInput = true;
 	private boolean blockInputX = true;
@@ -32,6 +30,9 @@ public class Options extends GameState
 		options[1] = p.getScale();
 	}
 	
+	/**
+	 * Updates logic
+	 */
 	protected void update()
 	{
 		changeOptions();
@@ -169,6 +170,9 @@ public class Options extends GameState
 		p.setResolution(options[1]);
 	}
 
+	/**
+	 * Updates visuals
+	 */
 	protected void drawFrame(Graphics g)
 	{
 		//Set background color to black

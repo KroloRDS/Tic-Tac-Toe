@@ -6,10 +6,9 @@ import java.util.Random;
 
 import TicTacToe.Tile.Tick;
 
+@SuppressWarnings("serial")
 public class GameBoard extends GameState
 {
-	private static final long serialVersionUID = 1L;
-	
 	private static int width = 3;
 	
 	private int posX = 0;
@@ -71,6 +70,9 @@ public class GameBoard extends GameState
 		}
 	}
 	
+	/**
+	 * Updates game logic
+	 */
 	protected void update()
 	{	
 		//Function that detects pause/unpause input
@@ -525,6 +527,9 @@ public class GameBoard extends GameState
 		turn = true;
 	}
 
+	/**
+	 * Updates visuals
+	 */
 	protected void drawFrame(Graphics g)
 	{
 		int tileWidth = 100 + 30 * p.getScale();

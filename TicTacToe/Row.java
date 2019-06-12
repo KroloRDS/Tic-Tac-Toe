@@ -16,6 +16,9 @@ public class Row
 		o = 0;
 	}
 	
+	/**
+	 * Resets the number of Xs and Os in this row
+	 */
 	public void reset()
 	{
 		x = 0;
@@ -23,6 +26,10 @@ public class Row
 		none = rows;
 	}
 	
+	/**
+	 * Increments number of given symbol in this row
+	 * @param symbol X or O
+	 */
 	public void inc(Tick symbol)
 	{
 		if (symbol == Tick.O)
@@ -36,6 +43,10 @@ public class Row
 		none--;
 	}
 	
+	/**
+	 * @param symbol X, O or Blank
+	 * @return number of given symbol in this row
+	 */
 	public int count(Tick symbol)
 	{
 		if (symbol == Tick.O)

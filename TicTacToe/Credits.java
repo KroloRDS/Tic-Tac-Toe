@@ -3,10 +3,9 @@ package TicTacToe;
 import java.awt.Color;
 import java.awt.Graphics;
 
+@SuppressWarnings("serial")
 public class Credits extends GameState
-{
-	private static final long serialVersionUID = 1L;
-	
+{	
 	private String creditsText = "Game by Mateusz Król";
 	private String goBackText = "Press ESC to go back";
 	
@@ -21,6 +20,9 @@ public class Credits extends GameState
 		super(p, myApp);
 	}
 	
+	/**
+	 * Updates game logic
+	 */
 	protected void update()
 	{
 		if (flashingTextTimer == 0)
@@ -42,6 +44,9 @@ public class Credits extends GameState
 		}
 	}
 	
+	/**
+	 * Updates visuals
+	 */
 	protected void drawFrame(Graphics g)
 	{
 		//Set background color to black

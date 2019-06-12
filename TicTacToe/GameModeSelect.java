@@ -3,11 +3,9 @@ package TicTacToe;
 import java.awt.Color;
 import java.awt.Graphics;
 
+@SuppressWarnings("serial")
 public class GameModeSelect extends GameState
 {
-	
-	private static final long serialVersionUID = 1L;
-	
 	private String menuText[] = {"1 Player", "2 Players"};
 	
 	private boolean twoPlayers = false;
@@ -18,6 +16,9 @@ public class GameModeSelect extends GameState
 		super(p, myApp);
 	}
 	
+	/**
+	 * Updates game logic
+	 */
 	protected void update()
 	{
 		if (!Key.left.isDown && !Key.right.isDown && !Key.ok.isDown)
@@ -44,6 +45,9 @@ public class GameModeSelect extends GameState
 		}
 	}
 
+	/**
+	 * Updates visuals
+	 */
 	protected void drawFrame(Graphics g)
 	{
 		//Set background color to black

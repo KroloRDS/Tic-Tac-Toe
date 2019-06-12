@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 public class Controller
 {
+	//Maps key pressed event codes to key objects
 	public HashMap<Integer, Key> keyBindings = new HashMap<Integer, Key>();
 	
 	public Controller()
@@ -14,10 +15,12 @@ public class Controller
 		bind(KeyEvent.VK_DOWN, Key.down);
 		bind(KeyEvent.VK_RIGHT, Key.right);
 		
+		//So that all those three keys can work as CANCEL
 		bind(KeyEvent.VK_ESCAPE, Key.esc);
 		bind(KeyEvent.VK_BACK_SPACE, Key.esc);
 		bind(KeyEvent.VK_X, Key.esc);
 		
+		//So that all those three keys can work as OK
 		bind(KeyEvent.VK_ENTER, Key.ok);
 		bind(KeyEvent.VK_SPACE, Key.ok);
 		bind(KeyEvent.VK_Z, Key.ok);
@@ -28,6 +31,10 @@ public class Controller
 		keyBindings.put(keyCode, key);
 	}
 
+	/**
+	 * Changes key status to being pressed
+	 * @param e key event code
+	 */
 	public void keyPressed(KeyEvent e)
 	{
 		if (keyBindings.get(e.getKeyCode()) != null)
@@ -36,6 +43,10 @@ public class Controller
 		}
 	}
 
+	/**
+	 * Changes key status to not being pressed
+	 * @param e key event code
+	 */
 	public void keyReleased(KeyEvent e)
 	{
 		if (keyBindings.get(e.getKeyCode()) != null)

@@ -10,16 +10,26 @@ public class Tile
 		tick = Tick.None;
 	}
 	
+	/**
+	 * Changes the symbol of this tile
+	 * @param tick X, O, or blank
+	 */
 	public void setTick(Tick tick)
 	{
 		this.tick = tick;
 	}
 	
+	/**
+	 * @return symbol of this tile: X, O, or blank
+	 */
 	public Tick getTick()
 	{
 		return tick;
 	}
 	
+	/**
+	 * @return false if this tile is vacant (no X and no O)
+	 */
 	public boolean isOccupied()
 	{
 		if (tick == Tick.None)

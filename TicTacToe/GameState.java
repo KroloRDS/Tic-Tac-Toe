@@ -54,6 +54,9 @@ public abstract class GameState extends JPanel implements Runnable
 		smallFontMetrics = getFontMetrics(smallFont);
 	}
 	
+	/**
+	 * Starts thread
+	 */
 	@Override
 	public void addNotify()
 	{
@@ -63,6 +66,9 @@ public abstract class GameState extends JPanel implements Runnable
 		animator.start();
 	}
 
+	/**
+	 * This function is called every time a new frame is drawn
+	 */
 	@Override
 	public void paintComponent(Graphics g)
 	{
@@ -73,6 +79,9 @@ public abstract class GameState extends JPanel implements Runnable
 		drawFrame(g);
 	}
 	
+	/**
+	 * This function is called when the thread is started
+	 */
 	@Override
 	public void run()
 	{
@@ -118,6 +127,11 @@ public abstract class GameState extends JPanel implements Runnable
 	
 	abstract protected void drawFrame(Graphics g);
 	
+	/**
+	 * Function that plays sound effects
+	 * Plays selected sound clip only once
+	 * @param location path to sound file
+	 */
 	protected void playSe(String location)
 	{
 		if (p.isSeOn())

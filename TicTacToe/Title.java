@@ -3,11 +3,9 @@ package TicTacToe;
 import java.awt.Color;
 import java.awt.Graphics;
 
+@SuppressWarnings("serial")
 public class Title extends GameState
 {
-	
-	private static final long serialVersionUID = 1L;
-	
 	private final String titleText = "TIC TAC TOE";
 	private final String pressStartText = "Press Start";
 	
@@ -28,6 +26,9 @@ public class Title extends GameState
 		super(p, myApp);
 	}
 	
+	/**
+	 * Updates logic
+	 */
 	protected void update()
 	{
 		if (introTimer != 0)
@@ -63,6 +64,9 @@ public class Title extends GameState
 		}
 	}
 
+	/**
+	 * Updates visuals
+	 */
 	protected void drawFrame(Graphics g)
 	{
 		//Set background color to black

@@ -13,8 +13,7 @@ public class Menu extends GameState
 	private String titleText = "TIC TAC TOE";
 	private String[] menuText = {"START GAME", "OPTIONS", "CREDITS", "QUIT"};
 	
-	int option = 1;
-	int optionsCount = menuText.length;
+	private int option = 1;
 	
 	private boolean blockInput = true;
 	
@@ -23,6 +22,9 @@ public class Menu extends GameState
 		super(p, myApp);
 	}
 	
+	/**
+	 * Updates logic
+	 */
 	protected void update()
 	{
 		if (!Key.down.isDown && !Key.up.isDown && !Key.ok.isDown)
@@ -102,6 +104,7 @@ public class Menu extends GameState
 			try
 			{
 				Thread.sleep(400);
+				//Time to play sound effect
 			}
 			catch (InterruptedException e)
 			{			   
@@ -115,6 +118,9 @@ public class Menu extends GameState
 		}
 	}
 
+	/**
+	 * Update visuals
+	 */
 	protected void drawFrame(Graphics g)
 	{
 		//Set background color to black
